@@ -1,0 +1,23 @@
+<hr>
+<!-- Text Binding -->
+<h1>{{message}}</h1>
+<h2>{{title}}</h2>
+<p [style.color]= 'textColor'>{{description}}</p>
+
+<!-- Property Binding -->
+ <img [src]='imgURL' [alt]= 'altText' [width]= 'w' [height]= 'h'>
+
+
+ <!-- Class Binding -->
+ <p [class.highlighted]='isHighlighted'>A pretty Dalmatian!</p>
+
+ <!-- Two-way Binding -->
+<input [(ngModel)]="yourName" placeholder="Enter your Name">
+<br> <p>Hello, {{yourName}}</p>
+
+<!-- Event Binding -->
+ <button (click)="increment()">Increment</button>
+ <button (click)="decrement()">Decrement</button>
+ <p>Count : {{ count }}</p>
+<hr>
+
