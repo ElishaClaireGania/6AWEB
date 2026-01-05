@@ -1,0 +1,31 @@
+<!-- HERO IMAGE -->
+<img src="partner-img.jpg" alt="Partner Image">
+<h1>{{title}}</h1>
+<p>You can achieve a very impressive effect by using our animated navigation bar, which is transprent on start, and change the color after the scroll.<p>
+<button>{{cta_message}}</button>
+
+<h2>{{ corporate }}</h2>
+
+<!-- using directives -->
+<table class="partners-table">
+  <thead>
+    <tr>
+      <th>Partner Name</th>
+      <th>Industry</th>
+      <th>Level</th>
+      <th>Partner Since</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let partner of partners">
+      <td>{{ partner.name }}</td>
+      <td>{{ partner.industry }}</td>
+      <td>
+        <span [ngClass]="getBadgeClass(partner.level)" class="badge">
+          {{ partner.level }}
+        </span>
+      </td>
+      <td>{{ partner.since }}</td>
+    </tr>
+  </tbody>
+</table>

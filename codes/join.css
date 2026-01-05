@@ -1,0 +1,119 @@
+/* Hero Section Container */
+.hero {
+  position: relative;
+  width: 100%;
+  max-width: 1000px;
+  height: 400px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: white;
+}
+
+/* The Background Image */
+.hero-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1;
+  filter: brightness(60%); /
+}
+
+.hero-content {
+  padding: 20px;
+  z-index: 1;
+}
+
+/* The Overlapping Card */
+.form-card {
+  background: white;
+  width: 90%;
+  max-width: 700px;
+  margin: -80px auto 40px;
+  padding: 40px;
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.join-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 40px 20px;
+  font-family: 'Inter', system-ui, sans-serif;
+}
+
+.cta-btn {
+  background-color: #636b2f;
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.cta-btn:hover {
+  background-color: #ccccff;
+  color: #636b2f;
+}
+
+/* Form Card Style */
+.form-card {
+  background: white;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  border: 1px solid #eee;
+}
+
+.form-group {
+  margin-bottom: 25px;
+}
+
+.name-row {
+  display: flex;
+  gap: 20px;
+}
+
+.name-row label {
+  flex: 1;
+}
+
+/* Label & Input Styling */
+label {
+  display: block;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #34495e;
+  margin-bottom: 8px;
+}
+
+input {
+  width: 100%;
+  padding: 12px;
+  border: 1.5px solid #ccccff;
+  border-radius: 6px;
+  font-size: 1rem;
+  box-sizing: border-box; /* Important for width */
+  transition: border-color 0.3s;
+}
+
+input:focus {
+  outline: none;
+  border-color: #636b2f;
+}
+
+/* Preview Text Style */
+.preview-text {
+  margin-top: 8px;
+  font-size: 0.85rem;
+  color: #636b2f;
+  font-style: italic;
+  min-height: 1.2rem;
+}

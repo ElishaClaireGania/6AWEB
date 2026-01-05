@@ -1,0 +1,22 @@
+<!-- HERO MESSAGE -->
+<img src="about-img.avif" alt="About Image">
+<h1>{{title}}</h1>
+<p>Learn how the team and committee are shaping the world of conferences, get the latest conference news and updates on our blog, and contact us for guidance.</p>
+<button>{{cta_message}}</button>
+
+<h2>About</h2>
+<p>We believe in transparency, cooperation globally, and the free exchange of talent and ideas. A forum for the sharing of these technical and humanitarian discussions is given for meetings, conferences and other events. We are also committed to creating a secure, constructive and supportive atmosphere for all participants in conferences, activities and meetings who participate these discussions with us.</p>
+
+<!-- using event binding -->
+<button class="claim-btn" (click)="claimGift()">
+  Claim your gift here
+</button>
+
+<div class="alert-overlay" *ngIf="showCustomAlert">
+  <div class="alert-card">
+    <div class="icon">🎁</div>
+    <h2>Success!</h2>
+    <p>You have claimed your gift of 100 points.</p>
+    <button class="close-btn" (click)="closeAlert()">Awesome!</button>
+  </div>
+</div>

@@ -1,0 +1,42 @@
+/* Style the nav container */
+.navbar {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 20px 300px;
+  font-family: 'Segoe UI', Roboto, sans-serif;
+  gap: 15px;
+  background-color: #ccccff;
+}
+
+.navbar a {
+  text-decoration: none;
+  color: #444;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  padding: 5px 10px;
+}
+
+.navbar a:hover {
+  color: #636b2f !important;
+  font-weight: bold;
+}
+
+.divider {
+  color: #636b2f;
+}
+
+.nav-underline {
+  border: 0;
+  height: 1px;
+  background: #eee;
+  margin: 0 auto;
+  width: 80%;
+}
+
+.container {
+  padding: 30px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+

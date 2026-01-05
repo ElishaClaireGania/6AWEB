@@ -1,0 +1,42 @@
+<div class="join-container">
+  <header class="hero">
+    <div class="hero-overlay">
+       <img src="join-img.jpg" alt="Join Image" class="hero-bg">
+      <div class="hero-content">
+        <h1>{{ title }}</h1>
+        <p>{{ message }}</p>
+        <button class="cta-btn">{{ cta_message }}</button>
+      </div>
+    </div>
+  </header>
+
+  <div class="form-card">
+    <form>
+      <div class="form-group">
+        <div class="name-row">
+          <label>First Name
+            <input [(ngModel)]="firstName" name="firstName" placeholder="John">
+          </label>
+          <label>Last Name
+            <input [(ngModel)]="lastName" name="lastName" placeholder="Doe">
+          </label>
+        </div>
+        <p class="preview-text">Welcome, <strong>{{ firstName }} {{ lastName }}</strong></p>
+      </div>
+
+      <div class="form-group">
+        <label>Email Address
+          <input [(ngModel)]="emailAdd" name="emailAdd" type="email" placeholder="email@institution.edu">
+        </label>
+        <p class="preview-text">Preview{{ emailAdd }}</p>
+      </div>
+
+      <div class="form-group">
+        <label>Institution/Affiliation
+          <input [(ngModel)]="institution" name="institution" placeholder="University of ...">
+        </label>
+        <p class="preview-text">Preview: {{ institution }}</p>
+      </div>
+    </form>
+  </div>
+</div>
