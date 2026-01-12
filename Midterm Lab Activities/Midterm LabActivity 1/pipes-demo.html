@@ -1,0 +1,85 @@
+<div class="pipe-container">
+  <p class="status-header">pipes-demo works!</p>
+
+  <div class="raw-data">
+    Today's date :- {{presentDate}}
+  </div>
+
+  <section class="pipe-section">
+    <h3>Date</h3>
+    <div class="pipe-row">
+      <span class="label">Today's date :-</span> {{presentDate | date }}
+    </div>
+
+    <div class="pipe-row">
+      <span class="label">Short date :-</span> {{presentDate | date : 'shortDate'}} <br>
+      <span class="label">Full date :-</span> {{presentDate | date : 'fullDate'}} <br>
+      <span class="label">Formatted :-</span> {{presentDate | date : 'M/dd/yyyy'}} <br>
+      <span class="label">Time :-</span> {{presentDate | date : 'h:mm'}} <br>
+      <p class="text-upper">{{name | uppercase}}</p>
+    </div>
+
+    <div class="pipe-row chained">
+      Date uppercase :- {{presentDate | date : 'fullDate' | uppercase}} <br>
+      Date lowercase :- {{presentDate | date : 'medium' | lowercase}} <br>
+    </div>
+  </section>
+
+  <section class="pipe-section currency">
+    <h3>Currency Pipe</h3>
+    <div class="pipe-row">
+      <p class="raw-val">{{ price }}</p>
+      <p>{{ price | currency: '' : true }}</p>
+      <p>{{ price | currency: 'INR' }}</p>
+      <p>{{ price | currency: 'USD' : 'symbol' : '1.0-0' }}</p>
+      <p>{{ price | currency: 'EUR' : 'code' : '2.2-4' }}</p>
+    </div>
+  </section>
+
+  <section class="pipe-section">
+    <h3>Slice Pipe</h3>
+    <div class="pipe-row slice-results">
+      <p>Start index (2) :- <strong>{{Fruits | slice:2}}</strong></p>
+      <p>Start/End (1:4) :- <strong>{{Fruits | slice:1:4}}</strong></p>
+      <p>Negative (-2) :- <strong>{{Fruits | slice:-2}}</strong></p>
+      <p>Negative/End (-4:-2) :- <strong>{{Fruits | slice:-4:-2}}</strong></p>
+    </div>
+  </section>
+
+  <section class="pipe-section">
+    <h3>Decimal Pipe</h3>
+    <div class="pipe-row">
+      <p>{{ decimalNum1 | number }}</p>
+      <p>{{ decimalNum2 | number }}</p>
+    </div>
+    <div class="pipe-row">
+      <p>Format (3.1) :- {{ decimalNum1 | number: '3.1'}}</p>
+      <p>Format (2.1-4) :- {{ decimalNum1 | number: '2.1-4'}}</p>
+    </div>
+  </section>
+
+  <section class="pipe-section async-box">
+    <h3>Async Pipe</h3>
+    <div>
+      <p>Connection Status: <span class="status-tag">{{ status$ | async }}</span></p>
+    </div>
+  </section>
+
+  <section class="pipe-section">
+    <h3>JSON Pipe</h3>
+    <div class="json-output">
+      <pre>{{ userObject | json }}</pre>
+    </div>
+  </section>
+
+  <section class="pipe-section">
+    <h3>Percent Pipe</h3>
+    <div class="pipe-row">
+      <p>{{ percentageVal | percent }}</p>
+    </div>
+    <div class="pipe-row">
+      <p>Format (2.2-2) :- {{ percentageVal | percent: '2.2-2' }}</p>
+      <p>Format (1.1-4) :- {{ percentageVal | percent: '1.1-4' }}</p>
+    </div>
+  </section>
+</div>
