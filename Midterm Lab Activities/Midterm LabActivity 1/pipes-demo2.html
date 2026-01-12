@@ -1,0 +1,115 @@
+<div class="demo-container">
+  <header>
+    <h1>Angular Pipes Demo</h1>
+    <p>Current Raw Date: {{presentDate}}</p>
+  </header>
+
+  <!-- using date pipe -->
+  <div class="pipe-grid">
+    <section class="pipe-card">
+      <h3>📅 Date Pipe</h3>
+      <div class="content">
+        <p><strong>Default:</strong> {{presentDate | date }}</p>
+        <p><strong>Short:</strong> {{presentDate | date : 'shortDate'}}</p>
+        <p><strong>Custom:</strong> {{presentDate | date : 'M/dd/yyyy'}}</p>
+        <p class="chained"><strong>Chained:</strong> {{presentDate | date : 'fullDate' | uppercase}}</p>
+      </div>
+    </section>
+
+    <!-- using currency pipe -->
+    <section class="pipe-card">
+      <h3>💰 Currency Pipe</h3>
+      <div class="content">
+        <p><strong>Raw:</strong> {{ price }}</p>
+        <p><strong>INR:</strong> {{ price | currency: 'INR' }}</p>
+        <p><strong>USD (No Decimals):</strong> {{ price | currency: 'USD' : 'symbol' : '1.0-0' }}</p>
+        <p><strong>EUR (Code):</strong> {{ price | currency: 'EUR' : 'code' }}</p>
+      </div>
+    </section>
+
+    <!-- using decimal, percent, and async pipe -->
+    <section class="pipe-card">
+      <h3>🔢 Decimal, Percent, & Asynce Pipes</h3>
+      <div class="content">
+        <p><strong>Decimal:</strong> {{ decimalNum1 | number: '2.1-4'}}</p>
+        <p><strong>Percentage:</strong> {{ percentageVal | percent: '1.1-2' }}</p>
+        <p><strong>Async Status:</strong> <span class="badge">{{ status$ | async }}</span></p>
+      </div>
+    </section>
+
+    <!-- using slice and json pipe -->
+    <section class="pipe-card">
+      <h3>✂️ Slice & JSON Pipes</h3>
+      <div class="content">
+        <p><strong>Fruits (1:4):</strong> {{Fruits | slice:1:4}}</p>
+        <p><strong>User JSON:</strong></p>
+        <pre>{{ userObject | json }}</pre>
+      </div>
+    </section>
+  </div>
+</div>
+ 
+
+
+
+.demo-container {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  padding: 20px;
+  background-color: #f4f7f6;
+  color: #333;
+}
+
+header {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.pipe-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+}
+
+.pipe-card {
+  background: white;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  border-top: 4px solid #3f51b5; /* Angular Blue */
+}
+
+.pipe-card h3 {
+  margin-top: 0;
+  color: #3f51b5;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 10px;
+}
+
+.content p {
+  margin: 10px 0;
+  font-size: 0.95rem;
+}
+
+pre {
+  background: #272822;
+  color: #f8f8f2;
+  padding: 10px;
+  border-radius: 5px;
+  font-size: 0.8rem;
+  overflow-x: auto;
+}
+
+.badge {
+  background: #e1f5fe;
+  color: #01579b;
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-weight: bold;
+}
+
+
+
+
+
+
+
