@@ -1,0 +1,41 @@
+.app-container {
+  font-family: Arial, sans-serif;
+  margin: 20px;
+  padding: 20px;
+  border: 2px solid #2196f3;
+  border-radius: 10px;
+  background-color: #f0f8ff;
+}
+
+.child-block {
+  margin-bottom: 20px;
+  padding: 15px;
+  background: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+.properties-block {
+  margin-bottom: 20px;
+  padding: 15px;
+  background: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+.date {
+  color: #555;
+  font-style: italic;
+}
+
+.property {
+  font-weight: bold;
+  color: #2e7d32;
+}
+
+.routing-block {
+  padding: 15px;
+  border: 1px dashed #9c27b0;
+  border-radius: 6px;
+  background: #fafafa;
+}
