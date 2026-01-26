@@ -1,0 +1,51 @@
+<div class="main-container">
+  <h1>List from Main</h1>
+
+  <!-- Users -->
+  <section class="users">
+    <h2>USERS SECTION</h2>
+    <table>
+    <thead>
+      <th>ID</th>
+      <th>Name</th>
+      <th>Username</th>
+      <th>Email</th>
+    </thead>
+
+    <tbody>
+      @for (user of httpusers; track user.id){
+        <tr>
+        <td>{{ user.id }}</td>
+        <td>{{ user.name}}</td>
+        <td>{{ user.username }}</td>
+        <td>{{ user.email}}</td>
+      </tr>
+      }
+
+    </tbody>
+  </table>
+  </section>
+
+  <!-- Quotes -->
+  <section class="quote">
+    <h2>QUOTES SECTION</h2>
+    <table>
+    <thead>
+      <th>ID</th>
+      <th>Quote</th>
+      <th>Author</th>
+    </thead>
+
+    <tbody>
+      @for (quote of httpquotes; track quote.id){
+        <tr>
+        <td>{{ quote.id }}</td>
+        <td>{{ quote.quote}}</td>
+        <td>{{ quote.author }}</td>
+      </tr>
+      }
+    </tbody>
+  </table>
+  </section>
+</div>
+<router-outlet />

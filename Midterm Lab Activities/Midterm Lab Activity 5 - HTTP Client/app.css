@@ -1,0 +1,64 @@
+/* Layout Container */
+.main-container {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  padding: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  background-color: #f9f9f9;
+}
+
+h1 {
+  text-align: center;
+  color: #333;
+  margin-bottom: 2rem;
+}
+
+/* Sections */
+section {
+  background: white;
+  padding: 1.5rem;
+  margin-bottom: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+  color: #555;
+  border-bottom: 2px solid #eee;
+  padding-bottom: 0.5rem;
+  margin-top: 0;
+}
+
+/* Table Styling */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1rem;
+}
+
+th {
+  background-color: #673ab7;
+  color: white;
+  text-align: left;
+  padding: 12px;
+}
+
+td {
+  padding: 12px;
+  border-bottom: 1px solid #ddd;
+  color: #444;
+}
+
+/* Zebra Striping */
+tbody tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+/* Hover Effect */
+tbody tr:hover {
+  background-color: #e9e9e9;
+  transition: background-color 0.2s ease;
+}
+
+/* Specific Column Widths */
+th:nth-child(1) { width: 50px; }
