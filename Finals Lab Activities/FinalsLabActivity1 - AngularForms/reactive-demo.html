@@ -1,0 +1,64 @@
+<div class="card">
+  <h2>REACTIVE DEMO</h2>
+  <form [formGroup]="form" (ngSubmit)="onSubmit()">
+    <input class="input" type="text" placeholder="Username" formControlName="username">
+    @if (isInvalid('username')){
+      <small class="error">Username: 4-12 chars (letters/numbers/_)</small>
+    }
+
+    <input class="input" type="email" placeholder="Email" formControlName="email">
+    @if (isInvalid('email')){
+      <small class="error">Enter a valid email</small>
+    }
+
+    <input class="input" type="password" placeholder="Password" formControlName="password">
+    @if (isInvalid('password')){
+      <small class="error">Password: 8+ with upper, lower, number</small>
+    }
+
+    <select class="input" formControlName="role">
+      @for (r of roles; track r){
+        <option [value]="r">{{ r }}</option>
+      }
+    </select>
+
+    <section>
+      <p>Gender:</p>
+      <div class="radio-group">
+        <label>
+          <input type="radio" value="male" formControlName="gender"> Male
+        </label>
+        <label>
+          <input type="radio" value="female" formControlName="gender"> Female
+        </label>
+      </div>
+      @if (isInvalid('gender')){
+        <small class="error">Please select a gender</small>
+      }
+    </section>
+
+    <section>
+      <p>Status:</p>
+      <div class="radio-group">
+        <label>
+          <input type="radio" value="active" formControlName="status"> Permanent
+        </label>
+        <label>
+          <input type="radio" value="inactive" formControlName="status"> Probationary
+        </label>
+      </div>
+    </section>
+
+    <textarea
+      class="input"
+      placeholder="Enter your comments..."
+      formControlName="comments"
+      rows="3">
+    </textarea>
+    @if (isInvalid('comments')){
+      <small class="error">Comments must be at least 10 characters</small>
+    }
+
+    <button class="btn" type="submit" [disabled]="form.invalid">Submit</button>
+  </form>
+</div>

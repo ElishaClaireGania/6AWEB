@@ -1,0 +1,114 @@
+/* Container - Deep Midnight Purple background */
+.card, .summary-card {
+  max-width: 500px;
+  margin: 2rem auto;
+  padding: 2.5rem;
+  background: #16121e;
+  border-radius: 16px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  color: #e5e0ff;
+  border: 1px solid #2d2442;
+}
+
+/* Typography */
+h2 {
+  color: #facc15;
+  margin-top: 0;
+  margin-bottom: 1.5rem;
+  font-size: 1.8rem;
+}
+
+p, label {
+  color: #a78bfa;
+  font-size: 0.95rem;
+}
+
+.input, textarea, select {
+  width: 100%;
+  padding: 14px;
+  margin: 8px 0 20px 0;
+  background: #251d3a;
+  border: 1.5px solid #3c305a;
+  border-radius: 8px;
+  color: #ffffff;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  box-sizing: border-box;
+  display: block;
+}
+
+.input:focus {
+  outline: none;
+  border-color: #a855f7;
+  box-shadow: 0 0 0 4px rgba(168, 85, 247, 0.15);
+  background: #2d2442;
+}
+
+/* Radio/Section styling */
+section {
+  margin-bottom: 20px;
+  padding: 15px;
+  background: #1e182f;
+  border-radius: 10px;
+  border: 1px solid #2d2442;
+}
+
+section p {
+  color: #facc15;
+  text-transform: uppercase;
+  letter-spacing: 0.05rem;
+  font-size: 0.75rem;
+  margin-top: 0;
+  margin-bottom: 10px;
+}
+
+.radio-group {
+  display: flex;
+  gap: 20px;
+}
+
+input[type="radio"] {
+  accent-color: #a855f7;
+  margin-right: 8px;
+  transform: scale(1.1);
+  cursor: pointer;
+}
+
+/* Submit Button - Gold Gradient */
+.btn {
+  width: 100%;
+  padding: 16px;
+  background: linear-gradient(135deg, #facc15 0%, #eab308 100%);
+  color: #16121e;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: transform 0.2s, opacity 0.2s;
+  margin-top: 10px;
+}
+
+.btn:hover:not(:disabled) {
+  transform: translateY(-2px);
+  filter: brightness(1.1);
+  box-shadow: 0 5px 15px rgba(250, 204, 21, 0.3);
+}
+
+.btn:disabled {
+  background: #3c305a;
+  color: #6d5d8a;
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+/* Error Messages - Moved to align properly */
+.error {
+  color: #ff7e67;
+  font-size: 0.85rem;
+  display: block;
+  margin-top: -15px;
+  margin-bottom: 15px;
+  font-weight: 500;
+}
