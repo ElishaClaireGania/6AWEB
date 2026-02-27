@@ -1,0 +1,129 @@
+<div class="main-container">
+  <div class="form-card">
+    <header class="form-header">
+      <h1>Join the Angular Developer community!</h1>
+    </header>
+
+     <form [formGroup]="formdata" (ngSubmit)="onClickSubmit()">
+    <mat-form-field appearance="fill">
+      <mat-label>Username</mat-label>
+      <input matInput placeholder="Enter Text" formControlName="userName">
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+      <mat-label>Email</mat-label>
+      <input matInput type="email" placeholder="Enter Email" formControlName="email">
+      @if (formdata.controls['email'].invalid && formdata.controls['email'].touched){
+        <mat-error>Email is required and must be a valid email.</mat-error>
+      }
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+      <mat-label>Password</mat-label>
+      <input matInput type="password" placeholder="Enter Password" formControlName="password">
+      @if (formdata.controls['password'].invalid && formdata.controls['password'].touched){
+        <mat-error>Password is required and must be at least 8 characters long.</mat-error>
+      }
+    </mat-form-field>
+
+    <div class="radio-group">
+      <label class="radio-labe">Gender</label>
+      <mat-radio-group formControlName="gender" class="gender-radio-group">
+        <mat-radio-button value="male">Male</mat-radio-button>
+        <mat-radio-button value="female">Female</mat-radio-button>
+        <mat-radio-button value="other">Other</mat-radio-button>
+      </mat-radio-group>
+    </div>
+
+    <mat-form-field appearance="fill">
+      <mat-label>Address</mat-label>
+      <input matInput placeholder="Enter Address" formControlName="address">
+    </mat-form-field>
+
+     <mat-form-field appearance="fill">
+      <mat-label>Birth Date</mat-label>
+      <input matInput [matDatepicker]="picker" placeholder="Select a date" formControlName="birthDate">
+      <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+      <mat-datepicker #picker></mat-datepicker>
+      @if (formdata.get('birthDate')?.hasError('required')) {
+        <mat-error>Birth date is required!</mat-error>
+      }
+    </mat-form-field>
+
+    <div class="slider-group">
+      <label class="slider-label">
+        Angular Skill Level: {{ formdata.get('angularSkillLevel')?.value }}
+      </label>
+      <mat-slider [min]="minSkillLevel" [max]="maxSkillLevel" [step]="1" [discrete]="true">
+        <input matSliderThumb formControlName="angularSkillLevel">
+      </mat-slider>
+    </div>
+
+    <!-- ADDITIONAL FIELDS -->
+    <!-- 1. AUTO COMPLETE -->
+    <mat-form-field appearance="fill" class="full-width" matAutocompleteOrigin #origin="matAutocompleteOrigin">
+    <mat-label>Primary Programming Language</mat-label>
+      <input
+        matInput
+        [formControl]="myControl"
+        [matAutocomplete]="auto"
+        [matAutocompleteConnectedTo]="origin"
+        placeholder="e.g. TypeScript">
+    </mat-form-field>
+
+    <mat-autocomplete #auto="matAutocomplete">
+      @for (option of options; track option) {
+        <mat-option [value]="option">{{option}}</mat-option>
+      }
+    </mat-autocomplete>
+
+
+    <!-- 2. CHIP LISTBOX -->
+     <div class="custom-section">
+      <label class="section-label">Preferred Learning Mode</label>
+      <mat-chip-listbox aria-label="Learning mode selection">
+        <mat-chip-option>Self-Paced</mat-chip-option>
+        <mat-chip-option color="accent" selected>Live Boot Camp</mat-chip-option>
+        <mat-chip-option>One-on-One Mentorship</mat-chip-option>
+      </mat-chip-listbox>
+    </div>
+
+    <!-- 3. MAT-LIST -->
+     <mat-list>
+      <div mat-subheader>Registration Includes:</div>
+      <mat-list-item>
+        <span matListItemTitle>Modern RxJS Patterns</span>
+        <span matListItemLine>Deep dive into Observables and Operators</span>
+      </mat-list-item>
+      <mat-list-item>
+        <span matListItemTitle>Standalone Components</span>
+        <span matListItemLine>Migrating from NgModules to modern architecture</span>
+      </mat-list-item>
+      <mat-list-item>
+        <span matListItemTitle>Angular Signals</span>
+        <span matListItemLine>Mastering fine-grained reactivity</span>
+      </mat-list-item>
+    </mat-list>
+
+
+    <button mat-raised-button color="primary" type="submit" [disabled]="!formdata.valid">Click Here
+    </button>
+
+    @if (submitted) {
+    <div class="results-box">
+      <h3>Registration Summary</h3>
+      <p>
+        <strong>Username:</strong> {{ userName }} <br>
+        <strong>Email:</strong> {{ email }} <br>
+        <strong>Birth Date:</strong> {{ birthDate | date:'mediumDate' }} <br>
+        <strong>Skill Level:</strong> {{ angularSkillLevel }}
+        <strong>Programming Language:</strong> {{ selectedLanguage }} <br>
+        <strong>Learning Mode:</strong> {{ learningMode }}
+      </p>
+    </div>
+    }
+  </form>
+  </div>
+</div>
+
+

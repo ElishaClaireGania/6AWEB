@@ -1,0 +1,101 @@
+:host {
+  --primary-blue: #007bff;
+  --azure-bg: #f0ffff;
+  --white: #ffffff;
+  --text-dark: #2c3e50;
+  --border-radius: 16px;
+}
+
+/* Page Background */
+.main-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: var(--azure-bg);
+  padding: 40px 20px;
+}
+
+/* Card Styling */
+.form-card {
+  background: var(--white);
+  width: 100%;
+  max-width: 600px;
+  border-radius: var(--border-radius);
+  box-shadow: 0 15px 35px rgba(0, 123, 255, 0.1);
+  overflow: hidden;
+  border: 1px solid rgba(0, 123, 255, 0.1);
+}
+
+.form-header {
+  background: var(--primary-blue);
+  color: white;
+  padding: 40px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.title {
+  font-size: 28px;
+  font-weight: 700;
+  margin: 0;
+  letter-spacing: 0.5px;
+}
+
+.subtitle {
+  font-size: 16px;
+  margin-top: 8px;
+  opacity: 0.9;
+  font-weight: 300;
+}
+
+.registration-form {
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+mat-form-field {
+  width: 100%;
+}
+
+.radio-group, .slider-group {
+  background: #f8fbff;
+  padding: 15px;
+  border-radius: 8px;
+  border: 1px solid #e1f0ff;
+  margin: 5px 0;
+}
+
+.radio-labe, .slider-label {
+  color: var(--primary-blue);
+  font-weight: 600;
+  font-size: 13px;
+  margin-bottom: 10px;
+  display: block;
+}
+
+/* Submit Button Customization */
+button[mat-raised-button] {
+  background-color: var(--primary-blue) !important;
+  color: white !important;
+  height: 50px;
+  border-radius: 8px !important;
+  font-size: 16px !important;
+  font-weight: 600 !important;
+  margin-top: 20px;
+}
+
+/* Summary Box */
+.results-box {
+  background: #e3f2fd;
+  border-left: 5px solid var(--primary-blue);
+  padding: 20px;
+  border-radius: 4px;
+  margin-top: 20px;
+  color: var(--text-dark);
+}
